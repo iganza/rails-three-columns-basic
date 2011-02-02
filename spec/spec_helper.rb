@@ -24,4 +24,11 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  config.include Haml::Helpers
+  config.include ActionView::Helpers
+  config.include Webrat::HaveTagMatcher
+  config.before(:each) do
+    init_haml_helpers
+  end
 end
