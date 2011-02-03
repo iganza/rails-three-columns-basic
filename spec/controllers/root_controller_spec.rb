@@ -8,7 +8,7 @@ describe RootController do
     assert_response :success
   end
 
-  it "returns default css stylesheet" do
+  it "#index returns default html and required divs" do
     get :index
     ["html", "head", "body"].each{|o| response.should have_tag(o)}
     ["container", "top", "left_nav", "right_nav", "content", "footer"].each do |o|
