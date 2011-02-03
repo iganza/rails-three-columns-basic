@@ -8,6 +8,7 @@ describe RootController do
     assert_response :success
   end
 
+  # there is probably a better place to make these checks...
   it "#index returns default html and required divs" do
     get :index
     ["html", "head", "body"].each{|o| response.should have_tag(o)}
